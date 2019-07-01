@@ -22,8 +22,7 @@
 + belongs_to :user
 + has_many   :comments
 
-
-### commentsテーブル
+## commentsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
