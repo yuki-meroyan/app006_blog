@@ -26,6 +26,7 @@
 ### commentsテーブル
 
 |Column|Type|Options|
+|------|----|-------|
 |comment|string|null: false|
 |blogtext_id|reference|null: false, foreign_key: true|
 
