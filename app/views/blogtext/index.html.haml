@@ -1,0 +1,106 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title PENPEN-BLOG
+    -# %link{:href => "css/reverseLNavigation.css", :rel => "stylesheet"}/
+    / Compiled and minified CSS
+    / Compiled and minified JavaScript
+  %body
+    .top-header
+      %ul.top-nav
+        %li.top-nav__button
+          = link_to "Sign-in",new_user_session_path
+        %li.top-nav__button
+          Sign-up
+        %li.top-nav__button
+          Post
+        %li.top-nav__button
+          Sign-out
+        %li.top-nav__button
+          Edit
+    .top-content
+          
+      .top-main
+ 
+    .middle-content
+      .middle-side
+
+        %p.middle-side__header
+          新着ブログ記事
+        %ul.middle__info
+          %li.middle__info__list
+            %p.middle__info__list--time-stamp
+              2019/07/01 <br> 
+            %p.middle__info__list--user-name
+              ペンギン1号 <br>
+            %p.middle__info__list--title
+              初投稿(仮置) 
+          %li.middle__info__list
+            %p.middle__info__list--time-stamp
+              2019/07/02 <br> 
+            %p.middle__info__list--user-name
+              ペンギン2号 <br>
+            %p.middle__info__list--title
+              仮置テスト1
+          %li.middle__info__list
+            %p.middle__info__list--time-stamp
+              2019/07/02 <br> 
+            %p.middle__info__list--user-name
+              ペンギン1号 <br>
+            %p.middle__info__list--title
+              仮置テスト2
+
+      .middle-main
+
+        .middle-main__header
+          .middle-main__header__title
+            %p 初投稿(仮置)
+          .middle-main__header__user-info
+            %p.middle-main__header--time-stamp 投稿日：2019/07/01
+            %p.middle-main__header--user-name 投稿者：ペンギン1号
+            
+        
+        
+        .middle-main__blog
+          %h1 本文
+        .blog__text
+          %p abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz
+        
+        .middle-main__border
+          コメント
+
+        %ul.middle-main__comment
+          %li.comment__user-name
+            %span ペンギン2号
+            .comment__main
+          
+          %li.comment__user-name
+            %span ペンギン3号
+            .comment__main
+
+          %li.comment__user-name
+            %span ペンギン4号
+            .comment__main
+
+    .header__content
+    -# %nav.green.darken-3
+    -#   .nav-wrapper
+    -#     %a.brand-logo{:href => "#"} Logo
+    -#     %ul.right.hide-on-med-and-down
+    -#       %li
+    -#         %a.nav-button{:href => "sass.html"}
+    -#           %p.text-center Sass
+    -#       %li
+    -#         %a.nav-button{:href => "badges.html"}
+    -#           %p
+    -#       %li
+    -#         %a.nav-button{:href => "collapsible.html"} JavaScript
+    -# %header.grovalNavigation
+    -#   %p グローバルナビゲーション
+    -# %main
+    -#   .localNavigation
+    -#     %p ローカルナビゲーション
+    -#   .content
+    -#     %p コンテンツ
+    -# %script{:src => "./app.js", :type => "text/javascript"}
