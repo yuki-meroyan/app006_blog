@@ -8,9 +8,12 @@ Bundler.require(*Rails.groups)
 
 module App006Blog
   class Application < Rails::Application
-    g.stylesheets false
-    g.javascripts false
-    g.helper false
-    g.test_framework false
+    config.generators do |g|
+      g.stylesheets false
+      g.javascripts false
+      g.helper false
+      g.test_framework false
+    end
+    config.i18n.default_locale = :ja
   end
 end

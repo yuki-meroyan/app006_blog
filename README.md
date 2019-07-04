@@ -4,8 +4,8 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false,unique: true|
-|mail|string|null: false|
+|name|string|null: false,unique: true, index: true|
+|email|string|null: false|
 
 
 ### Association
@@ -15,6 +15,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
+|title|string|null: false|
 |text|text|null: false|
 |blogtext_id|reference|null: false, foreign_key: true|
 
