@@ -1,0 +1,12 @@
+
+.middle-main__header
+  .middle-main__header__title
+    %p
+      = blogtext.title
+  .middle-main__header__user-info
+    %p.middle-main__header--time-stamp 
+      投稿日：
+      = blogtext.created_at.strftime('%Y年%-m月%-d日(%a)%H時%M分')
+    %p.middle-main__header--user-name 
+      投稿者：
+      = blogtext.user.name

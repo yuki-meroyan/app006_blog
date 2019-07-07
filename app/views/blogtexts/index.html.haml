@@ -1,0 +1,63 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title PENPEN-BLOG
+    -# %link{:href => "css/reverseLNavigation.css", :rel => "stylesheet"}/
+    / Compiled and minified CSS
+    / Compiled and minified JavaScript
+  %body
+    
+ 
+    .middle-content
+      .middle-side
+
+        %p.middle-side__header
+          新着ブログ記事
+        %ul.middle__info
+          - @blogtexts.each do |blogtext|
+            = render partial: 'bloglists', locals: { blogtext: blogtext }
+      
+      .middle-main    
+        = render partial: 'middle-main', locals: { blogtext: @blogtexts[0] }
+
+        .middle-main__blog
+          %h1 本文
+        .blog__text
+          %p 
+            = @blogtexts[0].text
+        
+        .middle-main__border
+          -# = link_to "コメントする", blogtext_comments_path(@blogtexts[0]), method: :post
+          .form
+          -# = form_with url: blogtext_comments_path(@blogtexts[0], method: :post do |f|
+          -#   = f.text_field :title, class: 'form-title', placeholder: 'タイトルを入力してください' 
+          -#   = f.submit '投稿する', class: 'form-btn'
+          -#   = f.text_area :text, class: 'form-text'
+
+        %ul.middle-main__comment
+          <br>コメント一覧
+          = render partial: 'comments'
+          -# = render partial: 'comments', locals: { blogtext: @blogtexts[0] }
+
+    .header__content
+    -# %nav.green.darken-3
+    -#   .nav-wrapper
+    -#     %a.brand-logo{:href => "#"} Logo
+    -#     %ul.right.hide-on-med-and-down
+    -#       %li
+    -#         %a.nav-button{:href => "sass.html"}
+    -#           %p.text-center Sass
+    -#       %li
+    -#         %a.nav-button{:href => "badges.html"}
+    -#           %p
+    -#       %li
+    -#         %a.nav-button{:href => "collapsible.html"} JavaScript
+    -# %header.grovalNavigation
+    -#   %p グローバルナビゲーション
+    -# %main
+    -#   .localNavigation
+    -#     %p ローカルナビゲーション
+    -#   .content
+    -#     %p コンテンツ
+    -# %script{:src => "./app.js", :type => "text/javascript"}
