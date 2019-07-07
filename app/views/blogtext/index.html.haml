@@ -9,16 +9,20 @@
   %body
     .top-header
       %ul.top-nav
-        %li.top-nav__button
-          = link_to "Sign-in",new_user_session_path
-        %li.top-nav__button
-          Sign-up
-        %li.top-nav__button
-          Post
-        %li.top-nav__button
-          Sign-out
-        %li.top-nav__button
-          Edit
+        - if user_signed_in?
+          %li.top-nav__button
+            投稿する
+          %li.top-nav__button
+            マイページ
+          %li.top-nav__button
+            = link_to "ログアウト", destroy_user_session_path, method: :delete
+          %li.top-nav__button
+            = link_to "アカウント編集", edit_user_registration_path
+        - else
+          %li.top-nav__button
+            = link_to "ログイン", new_user_session_path
+          %li.top-nav__button
+            = link_to "ログアウト", new_user_registration_path
     .top-content
           
       .top-main
