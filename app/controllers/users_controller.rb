@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_userbloglists, only: [:show, :index]
+  before_action :set_userbloglists, only: [:show, :index, :edit]
   
   def update
     if current_user.update(user_params)
@@ -7,6 +7,9 @@ class UsersController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def edit
   end
 
   def show

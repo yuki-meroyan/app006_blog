@@ -35,13 +35,13 @@
             = render partial: 'bloglists', locals: { blogtext: blogtext }
 
       .middle-main    
-        = render partial: 'middle-main', locals: { blogtext: @blogtexts[0] }
+        = render partial: 'middle-main', locals: { blogtext: @blogtext }
 
         .middle-main__blog
           %h1 本文
         .blog__text
           %p 
-            = @blogtexts[0].text
+            = @blogtext.text
         
         .middle-main__border
           -# = link_to "コメントする", blogtext_comments_path(@blogtexts[0]), method: :post
