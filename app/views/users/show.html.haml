@@ -1,0 +1,60 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title PENPEN-BLOG
+    -# %link{:href => "css/reverseLNavigation.css", :rel => "stylesheet"}/
+    / Compiled and minified CSS
+    / Compiled and minified JavaScript
+  %body
+    
+  - if @blogtexts.length == 0
+    .middle-content
+      .middle-side
+        %p.middle-side__header
+          記事未投稿
+        %ul.middle__info
+          
+      .middle-main 
+        .middle-main__blog
+          %h1 
+        .blog__text
+          %p 
+        .middle-main__border
+        %ul.middle-main__comment
+    .header__content
+
+  - else
+    .middle-content
+      .middle-side
+        %p.middle-side__header
+          マイブログ記事
+        %ul.middle__info
+            
+          - @blogtexts.each do |blogtext|
+            = render partial: 'bloglists', locals: { blogtext: blogtext }
+
+      .middle-main    
+        = render partial: 'middle-main', locals: { blogtext: @blogtext }
+
+        .middle-main__blog
+          %h1 本文
+        .blog__text
+          %p 
+            = @blogtext.text
+        
+        .middle-main__border
+          -# = link_to "コメントする", blogtext_comments_path(@blogtexts[0]), method: :post
+          .form
+          -# = form_with url: blogtext_comments_path(@blogtexts[0], method: :post do |f|
+          -#   = f.text_field :title, class: 'form-title', placeholder: 'タイトルを入力してください' 
+          -#   = f.submit '投稿する', class: 'form-btn'
+          -#   = f.text_area :text, class: 'form-text'
+
+        %ul.middle-main__comment
+          <br>コメント一覧
+          = render partial: 'comments'
+          -# = render partial: 'comments', locals: { blogtext: @blogtexts[0] }
+
+    .header__content
+
