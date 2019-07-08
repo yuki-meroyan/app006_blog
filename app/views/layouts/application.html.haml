@@ -13,7 +13,7 @@
           %li.top-nav__button
             = link_to "投稿する", new_blogtext_path, method: :get
           %li.top-nav__button
-            = link_to "マイページ", user_path(current_user), method: :get
+            = link_to "マイページ", users_path(current_user), method: :get
           %li.top-nav__button
             = link_to "トップページ" ,root_path
           %li.top-nav__button

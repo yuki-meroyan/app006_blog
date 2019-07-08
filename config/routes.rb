@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     resources :comments, only: [:create]
   end
   resources :users, only: [:update, :edit, :index, :show] do
-    resources :blogtexts, only: [:show]
+    resources :blogtexts, only: [:show, :destroy]
   end
     
 end

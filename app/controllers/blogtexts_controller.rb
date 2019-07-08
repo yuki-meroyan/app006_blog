@@ -18,6 +18,15 @@ class BlogtextsController < ApplicationController
     
   end
 
+  def destroy
+    blogtext = Blogtext.find(params[:id])
+    if blogtext.user_id == current_user.id
+      blogtext.destroy
+      redirect_to users_path(current_user.id)
+    end
+      
+  end
+
   def update
     blogtext = Blogtext.find(params[:id])
     if blogtext.user_id == current_user.id

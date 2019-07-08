@@ -12,9 +12,14 @@ class UsersController < ApplicationController
   def edit
   end
 
+  def index
+
+  end
+
+  
+
   def show
     # binding.pry
-    @blogtexts = Blogtext.where(user_id: current_user.id).order("created_at DESC")
     @blogtext = Blogtext.find(params[:id])
     # @blogtexts = user.blogtexts.order("created_at DESC")
   end

@@ -9,6 +9,8 @@
     - if blogtext.user_id == current_user.id
       %p.middle__info__list--button
         = link_to "編集する", edit_blogtext_path(blogtext.id), method: :get
+      %p.middle__info__list--button
+        = link_to "削除する", blogtext_path(blogtext.id), method: :delete
     -# - if 
     -#   = link_to blogtext.title, user_blogtext_path(@blogtexts), method: :get
     -# - else
