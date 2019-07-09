@@ -10,7 +10,7 @@
       %p.middle__info__list--button
         = link_to "編集する", edit_blogtext_path(blogtext.id), method: :get
       %p.middle__info__list--button
-        = link_to "削除する", blogtext_path(blogtext.id), method: :delete
+        = link_to "削除する", blogtext_path(blogtext.id), method: :delete, data: { confirm: "削除しますか？" }
     -# - if 
     -#   = link_to blogtext.title, user_blogtext_path(@blogtexts), method: :get
     -# - else
