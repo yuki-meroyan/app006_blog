@@ -1,17 +1,8 @@
 .middle-content
-  .middle-side
-
-    %p.middle-side__header
-      新着
-    %ul.middle__info
-      - @blogtexts.each do |blogtext|
-        = render partial: 'bloglists', locals: { blogtext: blogtext }
-  
+  = render partial: '/blogtexts/middle-side', locals: { blogtexts: @blogtexts, newOrUser: "マイブログ記事"  }
   .middle-main    
-    = render partial: 'middle-main', locals: { blogtext: @blogtext }
-
     .middle-main__blog
-      %h1 本文
+      %h1 本文（編集）
     .blog__text
       %p 
         - if @blogtext.user_id == current_user.id
@@ -22,12 +13,4 @@
               = f.text_area :text, class: 'form-text'
         - else
           = @blogtext.text
-    
-      -# = link_to "コメントする", blogtext_comments_path(@blogtexts[0]), method: :post
-      -# = form_with url: blogtext_comments_path(@blogtexts[0], method: :post do |f|
-      -#   = f.text_field :title, class: 'form-title', placeholder: 'タイトルを入力してください' 
-      -#   = f.submit '投稿する', class: 'form-btn'
-      -#   = f.text_area :text, class: 'form-text'
-      -# = render partial: 'comments', locals: { blogtext: @blogtexts[0] }
-
-.header__content
+.footer__content

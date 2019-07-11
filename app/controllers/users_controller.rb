@@ -1,15 +1,17 @@
 class UsersController < ApplicationController
-  before_action :set_userbloglists, only: [:show, :index, :edit]
+  before_action :set_userbloglists, only: [:show, :index, :edit, :update]
   
   def update
     if current_user.update(user_params)
       redirect_to root_path
     else
       render :edit
+      # render controller: 'blogtexts', action: 'edit'
     end
   end
 
   def edit
+    @blogtext = Blogtext.where(user_id: current_user.id).order("created_at DESC").find_by(params[:id])
   end
 
   def index

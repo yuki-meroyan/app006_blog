@@ -1,11 +1,5 @@
 .middle-content
   = render partial: 'middle-side', locals: { blogtexts: @blogtexts, newOrUser: "新着ブログ記事"  }
-  -# .middle-side
-  -#   %p.middle-side__header
-  -#     新着ブログ記事
-  -#   %ul.middle__info
-  -#     - @blogtexts.each do |blogtext|
-  -#       = render partial: 'bloglists', locals: { blogtext: blogtext }
   .middle-main
     .form
       = form_for [@blogtext] do |f|
