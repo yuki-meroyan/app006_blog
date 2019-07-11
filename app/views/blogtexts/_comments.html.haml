@@ -1,11 +1,6 @@
-%li.comment__user-name
-  %span ペンギン2号
-  .comment__main
-
-%li.comment__user-name
-  %span ペンギン3号
-  .comment__main
-
-%li.comment__user-name
-  %span ペンギン4号
-  .comment__main
+- comments.each do |comment|
+  %li.comment__user-name
+    %span
+      = comment.user.name
+    .comment__main
+      = comment.comment
