@@ -1,24 +1,14 @@
 .middle-content
-  .middle-side
-    %p.middle-side__header
-      新着ブログ記事
-    %ul.middle__info
-      - @blogtexts.each do |blogtext|
-        = render partial: 'bloglists', locals: { blogtext: blogtext }
+  = render partial: 'middle-side', locals: { blogtexts: @blogtexts, newOrUser: "新着ブログ記事"  }
+  -# .middle-side
+  -#   %p.middle-side__header
+  -#     新着ブログ記事
+  -#   %ul.middle__info
+  -#     - @blogtexts.each do |blogtext|
+  -#       = render partial: 'bloglists', locals: { blogtext: blogtext }
   .middle-main
     .form
       = form_for [@blogtext] do |f|
         = f.text_field :title, class: 'form-title', placeholder: 'タイトルを入力してください' 
         = f.submit '投稿する', class: 'form-btn'
         = f.text_area :text, class: 'form-text'
-      
-    -# .middle-main__header
-    -#   .middle-main__header__title
-    -#     %p 初投稿(仮置)
-    -#   .middle-main__header__user-info
-    -#     %p.middle-main__header--time-stamp 投稿日：
-    -#     %p.middle-main__header--user-name 投稿者：
-    -# .middle-main__blog
-    -#   %h1 本文
-    -# .blog__text
-    -#   %p abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz

@@ -13,15 +13,15 @@ class UsersController < ApplicationController
   end
 
   def index
-
+    @blogtext = Blogtext.where(user_id: current_user.id).order("created_at DESC").find_by(params[:id])
   end
 
   
 
   def show
-    # binding.pry
     @blogtext = Blogtext.find(params[:id])
-    # @blogtexts = user.blogtexts.order("created_at DESC")
+    @comment = Comment.new
+    @comments = @blogtext.comments.includes(:user)
   end
 
   private

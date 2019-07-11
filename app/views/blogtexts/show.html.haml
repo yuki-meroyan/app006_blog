@@ -1,36 +1,17 @@
 
 .middle-content
-  .middle-side
-
-    %p.middle-side__header
-      新着ブログ記事
-    %ul.middle__info
-      - @blogtexts.each do |blogtext|
-        = render partial: 'bloglists', locals: { blogtext: blogtext }
+  = render partial: 'middle-side', locals: { blogtexts: @blogtexts, newOrUser: "新着ブログ記事"  }
   .middle-main    
     = render partial: 'middle-main', locals: { blogtext: @blogtext }
-    
-    .middle-main__blog
-      %h1 本文
-    .blog__text
-      %p 
-        = @blogtext.text
-    
-    .middle-main__border
-      コメントする
-
+    .middle-main__border 
+      .form-comment
+        = form_for [@blogtext, @comment] do |f|
+          = f.text_area :comment, class: 'form-comment-box'
+          = f.submit 'コメントする', class: 'form-comment-btn'
     %ul.middle-main__comment
-      コメント一覧
-      %li.comment__user-name
-        %span ペンギン2号
-        .comment__main
-      
-      %li.comment__user-name
-        %span ペンギン3号
-        .comment__main
-
-      %li.comment__user-name
-        %span ペンギン4号
-        .comment__main
-
-.header__content
+      <br>コメント一覧
+      - if @comments.length != 0
+        = render partial: 'comments', locals: { comments: @comments }
+      - else 
+        <br><br>コメントはありません
+.footer__content

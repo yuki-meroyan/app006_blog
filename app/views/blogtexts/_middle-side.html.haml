@@ -1,0 +1,7 @@
+.middle-side
+  %p.middle-side__header
+    = newOrUser
+  
+  %ul.middle__info
+    - blogtexts.each do |blogtext|
+      = render partial: '/blogtexts/bloglists', locals: { blogtext: blogtext, newOrUser: newOrUser }

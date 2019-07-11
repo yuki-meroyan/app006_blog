@@ -2,7 +2,7 @@
   .middle-side
 
     %p.middle-side__header
-      新着ブログ記事
+      新着
     %ul.middle__info
       - @blogtexts.each do |blogtext|
         = render partial: 'bloglists', locals: { blogtext: blogtext }

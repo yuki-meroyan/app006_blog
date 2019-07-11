@@ -12,10 +12,12 @@ class BlogtextsController < ApplicationController
 
   def show
     @blogtext = Blogtext.find(params[:id])
+    @comment = Comment.new
+    @comments = @blogtext.comments.includes(:user)
   end
 
   def index
-    
+    @blogtext = Blogtext.order("created_at DESC").find_by(params[:id])
   end
 
   def destroy
@@ -46,10 +48,6 @@ class BlogtextsController < ApplicationController
 
   def set_bloglists
     @blogtexts = Blogtext.includes(:user).order("created_at DESC")
-  end
-
-  def set_comments
-    @comments = Blogtext.find(params[id]).includes(:comment)
   end
 
 end
