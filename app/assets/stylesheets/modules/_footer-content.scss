@@ -1,5 +1,18 @@
 .footer__content{
-  height: 20px;
-  border-top: solid 1px #95E1D3;
+  height: 60px;
+  border-top: solid 1px #a39391;
   background-color: #95E1D3;
+  display: flex;
+  color: #a39391;
+  padding: 20px 0 0;
+  .footer__top-scroll{
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    cursor: pointer;
+    &--text{
+      padding: 0px 10px 5px;
+      border-bottom: solid 1px #a39391;
+    }
+  }
 }
