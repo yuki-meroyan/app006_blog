@@ -8,7 +8,8 @@
 
 .middle-side{
   width: 300px;
-  min-height: 500px;
+  min-height: 900px;
+  max-height: 1200px;
   border-right: 1px solid #a39391;
   overflow: scroll;
   &__header{
@@ -43,14 +44,6 @@
       position: relative;
       display: inline-block;
       font-weight: bold;
-      // padding: 0.3em 0.3em;
-      // text-decoration: none;
-      // border-left: solid 4px #66d879;
-      // border-right: solid 4px #6fd866;
-      // color: #66d89f;
-      // text-shadow: 0 0 5px white;
-      // background: repeating-linear-gradient(-45deg, #d0ffcc, #ccffd0 3px,#efffe9 3px, #e9fffa 7px);
-      // transition: .4s;
     }
   }
   li{

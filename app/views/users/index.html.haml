@@ -1,4 +1,3 @@
-
 .middle-content
   - if @blogtexts.length == 0
     .middle-side
@@ -14,6 +13,6 @@
       %ul.middle-main__comment
   - else
     = render partial: '/blogtexts/middle-side', locals: { blogtexts: @blogtexts, newOrUser: "マイブログ記事"  }    
-    .middle-main 
-.header__content
+  
+= render partial: '/blogtexts/footer-content'
 
