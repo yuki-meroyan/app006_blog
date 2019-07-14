@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 20190707072659) do
 
-  create_table "blogtexts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "blogtexts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin ROW_FORMAT=DYNAMIC" do |t|
     t.string   "title",                    null: false
     t.text     "text",       limit: 65535, null: false
     t.integer  "user_id",                  null: false
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 20190707072659) do
     t.index ["user_id"], name: "index_blogtexts_on_user_id", using: :btree
   end
 
-  create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin ROW_FORMAT=DYNAMIC" do |t|
     t.string   "comment",     null: false
     t.integer  "user_id",     null: false
     t.integer  "blogtext_id", null: false
@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 20190707072659) do
     t.index ["user_id"], name: "index_comments_on_user_id", using: :btree
   end
 
-  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin ROW_FORMAT=DYNAMIC" do |t|
     t.string   "name",                                null: false
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
